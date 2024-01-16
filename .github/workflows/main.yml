@@ -2,7 +2,7 @@
 name: CI
 
 # 2 工作流执行名称
-run-name: ${{ github.actor }} is update repo, start building...
+# run-name: ${{ github.actor }} is update repo, start building...
 
 # 3 触发器
 on:
@@ -25,21 +25,16 @@ jobs:
     steps:
       # 1 将代码仓库的内容拉取（或称为检出）到工作目录中，以便在下面的工作流程中使用
       - name: Checkout code 
-        uses: actions/checkout@v3
+        
       # 2 安装 node 环境，并设置版本为 16
-      - name: Setup Node.js 
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
+      # - name: Setup Node.js 
+        
       # 3 安装 pnpm
-      - name: Install pnpm 
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7.0.0
+      # - name: Install pnpm 
+        
       # 4 安装依赖
-      - name: Install dependencies 
-        run: pnpm install
-
+      # - name: Install dependencies 
+       
       # 5 代码检查，无该命令所以不执行
       # - name: lint (代码检查)
       #   run: pnpm run lint
@@ -49,10 +44,10 @@ jobs:
       #   run: pnpm run test
 
       # 7 构建项目
-      - name: Build 
-        run: pnpm run build
+      # - name: Build 
+      #   run: pnpm run build
       # 8 上传构建产物（actions/upload-artifact@v3 会上传工作流程中的文件，允许您在作业之间共享数据并在工作流程完成后存储数据）
-      - name:  Upload build artifacts 
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: "./dist"
+      # - name:  Upload build artifacts 
+      #   uses: actions/upload-pages-artifact@v2
+      #   with:
+      #     path: "./dist"
