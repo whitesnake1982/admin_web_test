@@ -28,6 +28,8 @@ jobs:
         
       # 2 安装 node 环境，并设置版本为 16
       # - name: Setup Node.js 
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.1        
         
       # 3 安装 pnpm
       # - name: Install pnpm 
